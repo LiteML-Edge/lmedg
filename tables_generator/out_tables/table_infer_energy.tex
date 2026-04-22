@@ -1,0 +1,32 @@
+\begin{table}[!t]
+\centering
+\begin{minipage}{0.84\columnwidth}
+\caption{Per-inference energy and latency\\ ($n{=}24$) under Rolling-24.}
+\label{tab:infer_energy}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.2pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{l l
+S[table-format=1.3]
+S[table-format=2.2]}
+\toprule
+\textbf{Model} & \textbf{Mode} &
+{$\boldsymbol{\overline{\Delta E}}$ \textbf{($\mu$Wh)}} &
+{$\boldsymbol{\overline{t}}$ \textbf{(ms)}} \\
+\midrule
+\multirow{2}{*}{MLP}
+& Replay & 0.159 & 1.17 \\
+& Field  & 0.155 & 1.08 \\
+\midrule
+\multirow{2}{*}{LSTM}
+& Replay & 1.539 & 16.07 \\
+& Field  & 1.413 & 15.08 \\
+\midrule
+\multirow{2}{*}{Conv1D Tiny}
+& Replay & 0.614 & 5.96 \\
+& Field  & 0.591 & 5.85 \\
+\bottomrule
+\end{tabular}
+\end{minipage}
+\end{table}

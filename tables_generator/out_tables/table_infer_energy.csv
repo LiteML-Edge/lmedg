@@ -1,0 +1,4 @@
+Model,Replay energy (uWh),Replay time (ms),Field energy (uWh),Field time (ms),Replay log,Field log
+MLP,0.159,1.17,0.155,1.08,device-monitor-260331-085957.log,device-monitor-260331-204454.log
+LSTM,1.539,16.07,1.413,15.08,device-monitor-260331-110243.log,device-monitor-260401-140042.log
+Conv1D Tiny,0.614,5.96,0.591,5.85,device-monitor-260331-121705.log,device-monitor-260401-181106.log

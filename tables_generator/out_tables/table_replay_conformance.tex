@@ -1,0 +1,18 @@
+\begin{table*}[!t]
+\centering
+\caption{Replay stage-wise conformance summary under Rolling-24 ($n{=}24$).}
+\label{tab:equiv}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{lccccccc}
+\toprule
+\textbf{Model} & \textbf{Shared data} & \textbf{Critical input} & \textbf{Raw tensor} & \textbf{Decoded raw} & \textbf{Post-processed} & \textbf{Predictions} & \textbf{Latest metrics} \\
+ & \textbf{pipeline} & \textbf{($x^*$, $p^*$)} & \textbf{dump} & \textbf{output ($o_{\mathrm{raw}}$)} & \textbf{prediction ($y^*$)} & \textbf{(2 decimals)} & \textbf{(4 decimals)} \\
+\midrule
+MLP & MATCH & MATCH & MATCH & MATCH & MATCH & T=24/24; H=24/24 & 8/9 \\
+LSTM & MATCH & MATCH & MISMATCH & MISMATCH & MISMATCH & T=21/24; H=23/24 & 1/9 \\
+Conv1D Tiny & MATCH & MATCH & MATCH & MATCH & MATCH & T=24/24; H=24/24 & 9/9 \\
+\bottomrule
+\end{tabular}
+\end{table*}

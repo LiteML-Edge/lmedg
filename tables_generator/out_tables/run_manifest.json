@@ -1,0 +1,36 @@
+{
+  "repo_root": "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML",
+  "models_found": [
+    "MLP",
+    "LSTM",
+    "Conv1D Tiny"
+  ],
+  "default_workbook_dirs": {
+    "MLP": "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\utils\\workbook_mlp",
+    "LSTM": "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\utils\\workbook_lstm",
+    "Conv1D Tiny": "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\utils\\workbook_Conv1D_Tiny"
+  },
+  "default_log_dirs": {
+    "MLP": [
+      "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\firmwares\\environment_mlp\\PlatfIO_ESP32_Wemos_mlp\\logs"
+    ],
+    "LSTM": [
+      "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\firmwares\\environment_mlp\\PlatfIO_ESP32_Wemos_lstm\\logs"
+    ],
+    "Conv1D Tiny": [
+      "C:\\Users\\chpsv\\Documents\\MPEngEletrica\\Master Project\\LiteML\\firmwares\\environment_mlp\\PlatfIO_ESP32_Wemos_Con1D_Tiny\\logs"
+    ]
+  },
+  "outputs": [
+    "paper_model_sources.csv",
+    "table_replay_conformance.csv",
+    "table_infer_energy.csv",
+    "table_memory.csv",
+    "table_idle.csv",
+    "liteml_edge_paper_tables.xlsx",
+    "table_replay_conformance.tex",
+    "table_infer_energy.tex",
+    "table_memory.tex",
+    "table_idle.tex"
+  ]
+}

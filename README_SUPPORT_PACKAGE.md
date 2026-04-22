@@ -1,0 +1,73 @@
+# LiteML-Edge Technical Supporting Documentation Package
+
+## Purpose
+
+This package was prepared for the initial submission of the LiteML-Edge manuscript. Its purpose is to provide the main technical material needed to understand the method, inspect the workflow and file structure, and check the evidence paths associated with the results discussed in the paper.
+
+This package is not intended to represent the journal's post-acceptance Link-to-Code release. Instead, it functions as initial-submission technical documentation that supports implementation understanding and technology transfer while the formal code-release stage is handled separately.
+
+## Scope of This Package
+
+The package includes the main materials required to inspect the method described in the manuscript and its supporting technical context, including:
+
+- package-level orientation and traceability materials;
+- dataset artifacts and dataset-preparation scripts for each model family;
+- training, pruning, quantization, header export, and scaler export source references;
+- preserved firmware source references for the three model families;
+- replay artifacts and replay headers used to support Python-to-firmware equivalence checks;
+- Rolling-24 evidence and associated result files;
+- selected firmware logs for REPLAY and FIELD execution modes;
+- Python comparison scripts and supporting source references required to inspect the validation workflow;
+- a DOI-based Table I support folder containing the bibliographic evidence matrix, criterion-level evidence log, source index, and spreadsheet exports used to support the manuscript's related-work matrix, without claiming bundled copies of the cited articles;
+- a hardware schematic folder containing the ESP32 wiring diagram and GPIO-assignment table used by the reported sensor-node setup.
+
+The included materials are sufficient to support technical review of the manuscript and to document the implementation context that the later Link-to-Code stage can expand into a fuller public code-release package.
+
+On the software-stack boundary, the present package documents two distinct layers:
+
+- the Python-side training and export environment, represented by `environment/requirements.txt` and `environment/packages_report.md`, where TensorFlow-based training dependencies are expected to be installed through the documented requirements baseline; and
+- the embedded inference runtime context, represented by the preserved firmware-side source references and logs, where TensorFlow Lite Micro is part of the documented firmware stack but its operational ready-to-use packaging belongs to the later Link-to-Code stage.
+
+## Important Scope Clarification
+
+This package should be interpreted as a structured technical support package with aligned manuscript evidence, not as a full standalone repository for every original development operation.
+
+Accordingly, some elements that may exist in the original working repository, such as complete development history, full environment provisioning for every machine, or auxiliary repository infrastructure not needed for technical review, may be omitted here when they are not necessary for understanding the method described in the manuscript and its implementation context.
+
+All documentation in this package refers to the artifacts that are actually included in this bundle. The included materials are intended to make the implementation path, the deployment contract, and the validation path technically understandable from within this package, without claiming that the complete public code-release stage is already bundled here.
+
+## Documentation Position
+
+The goal of this package is to make the reported technology inspectable, traceable, and technically reviewable at the initial submission stage. It supports examination of:
+
+- the dataset structure and preparation logic;
+- the staged validation contract;
+- the replay-driven comparison approach;
+- the Rolling-24 evaluation artifacts;
+- the Python-versus-firmware validation workflow;
+- the embedded firmware logic preserved as source references;
+- the hardware wiring and GPIO context.
+
+This package does not try to provide a zero-setup reconstruction image for every host environment. It provides the technical material needed to understand the method and the implementation context until the later Link-to-Code stage becomes available.
+
+## Versioning Evidence Boundary
+
+The package includes explicit versioning evidence on the training side through preserved examples of `run/`, `latest.txt`, `manifest.json`, and the shared helper logic in `core_source_reference/utils/global_utils/versioning.py`. This makes the generated-workspace convention directly inspectable for the main training, pruning, quantization, header export, and scaler export stages.
+
+For metrics, the important point is not a separately preserved full `metrics/.../run*` tree. In the LiteML-Edge workflow, the corresponding metrics-side run directories are generated by execution of the training-side stages themselves, including the training, pruning, quantization, and downstream helper flow they drive. Accordingly, this package documents the generation linkage, run-selection behavior, and downstream result artifacts, while avoiding redundant duplication of the full metrics workspace when the same evidence is already curated elsewhere in the bundle.
+
+## Package Use
+
+Reviewers may use this package to:
+
+1. inspect the dataset and preprocessing structure used by each model family;
+2. examine replay artifacts and firmware logs;
+3. review the Python-to-firmware comparison scripts and their supporting references;
+4. verify traceability between claims, technical-support artifacts, and reported results;
+5. assess the consistency of the LiteML-Edge validation methodology;
+6. inspect the DOI-based support trail used to support Table I in the manuscript;
+7. inspect the hardware documentation used to contextualize the firmware-side measurements and deployment setup.
+
+## Interpretation Boundary for Rebuild and Reuse
+
+Where full independent rerun, rebuild, or public code release is required, that stage should be understood separately from the present initial-submission package. The current bundle is designed to support technical review and implementation understanding, while a later Link-to-Code stage can expose a broader executable repository when editorially required.

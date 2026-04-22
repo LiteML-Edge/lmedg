@@ -1,0 +1,34 @@
+\begin{table}[!t]
+\centering
+\caption{Deployment footprint and heap headroom.}
+\label{tab:memory}
+\scriptsize
+\setlength{\tabcolsep}{3.0pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular} {
+l
+S[table-format=1.2]
+S[table-format=1.2]
+S[table-format=3.1]
+S[table-format=2.1]
+}
+\toprule
+\textbf{Model} &
+\textbf{Flash (kB)} &
+\textbf{Arena (kB)} &
+\multicolumn{2}{c}{\textbf{Min Heap Free (kB)}} \\
+\cmidrule(lr){4-5}
+&
+&
+&
+\textbf{Replay} &
+\textbf{Field} \\
+\midrule
+MLP & 6.46 & 0.91 & 139.1 & 90.4 \\
+\midrule
+LSTM & 9.46 & 3.42 & 139.1 & 90.4 \\
+\midrule
+Conv1D Tiny & 7.12 & 2.59 & 138.9 & 88.5 \\
+\bottomrule
+\end{tabular}
+\end{table}

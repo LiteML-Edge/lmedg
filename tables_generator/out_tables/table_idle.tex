@@ -1,0 +1,29 @@
+\begin{table}[!t]
+\centering
+\caption{Baseline IDLE current and power.}
+\label{tab:idle}
+\scriptsize
+\setlength{\tabcolsep}{3.2pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{ll
+S[table-format=2.2]
+S[table-format=3.2]}
+\toprule
+\textbf{Model} & \textbf{Mode} &
+{$\mathbf{I_{\text{mean}}}$ \textbf{(mA)}} &
+{$\mathbf{P_{\text{mean}}}$ \textbf{(mW)}} \\
+\midrule
+\multirow{2}{*}{MLP}
+& Replay & 60.05 & 304.94 \\
+& Field  & 60.71 & 310.85 \\
+\midrule
+\multirow{2}{*}{LSTM}
+& Replay & 61.61 & 312.97 \\
+& Field  & 60.08 & 308.07 \\
+\midrule
+\multirow{2}{*}{Conv1D Tiny}
+& Replay & 61.84 & 314.16 \\
+& Field  & 60.46 & 310.07 \\
+\bottomrule
+\end{tabular}
+\end{table}
