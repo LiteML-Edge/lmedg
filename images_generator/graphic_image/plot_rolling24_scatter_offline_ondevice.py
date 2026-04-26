@@ -10,8 +10,8 @@ comparing OFFLINE (Python post-quantization) vs ON-DEVICE (Firmware Replay).
 
 Inputs (Excel):
   A) ONE sheet containing TWO table blocks (recommended):
-       - "Predictions_rolling24_Python"
-       - "Predictions_rolling24_Firmware_Replay"
+       - "Predictions_rolling24_Conv1d_Tiny_Python"
+       - "Predictions_rolling24_Firmware_Conv1d_Tiny_Replay"
      Each block: a title row, then a header row, then data rows, then a blank row.
   B) TWO sheets (offline and on-device) with the same column schema.
 
@@ -342,9 +342,9 @@ def build_argparser():
     p.add_argument("--excel", type=str, required=True, help="Path to Excel file (.xlsx).")
 
     p.add_argument("--sheet", type=str, default=None, help="Sheet name with BOTH blocks (default: first sheet).")
-    p.add_argument("--offline_title", type=str, default="Predictions_rolling24_Conv1d_Tiny_Python",
+    p.add_argument("--offline_title", type=str, default="Predictions_rolling24_Conv1D_Tiny_Python",
                    help="Block title for OFFLINE section inside the sheet.")
-    p.add_argument("--ondevice_title", type=str, default="Predictions_rolling24_Conv1d_Tiny_Firmware_Replay",
+    p.add_argument("--ondevice_title", type=str, default="Predictions_rolling24_Conv1D_Tiny_Firmware_Replay",
                    help="Block title for ON-DEVICE section inside the sheet.")
 
     p.add_argument("--offline_sheet", type=str, default=None, help="Offline sheet name (two-sheet mode).")
