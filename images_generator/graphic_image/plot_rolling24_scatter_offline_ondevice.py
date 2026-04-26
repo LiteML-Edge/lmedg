@@ -18,7 +18,7 @@ Inputs (Excel):
 Outputs:
   - PNG @ 600 dpi 
   - PDF (vector) for camera-ready inclusion
-  - command: python plot_rolling24_scatter_offline_ondevice_v_artigo.py --excel data.xlsx --variable T --no_grid
+  - command: python plot_rolling24_scatter_offline_ondevice.py --excel data.xlsx --variable T --no_grid
 """
 
 from __future__ import annotations
@@ -342,9 +342,9 @@ def build_argparser():
     p.add_argument("--excel", type=str, required=True, help="Path to Excel file (.xlsx).")
 
     p.add_argument("--sheet", type=str, default=None, help="Sheet name with BOTH blocks (default: first sheet).")
-    p.add_argument("--offline_title", type=str, default="Predictions_rolling24_MLP_Python",
+    p.add_argument("--offline_title", type=str, default="Predictions_rolling24_Conv1d_Tiny_Python",
                    help="Block title for OFFLINE section inside the sheet.")
-    p.add_argument("--ondevice_title", type=str, default="Predictions_rolling24_MLP_Firmware_Replay",
+    p.add_argument("--ondevice_title", type=str, default="Predictions_rolling24_Conv1d_Tiny_Firmware_Replay",
                    help="Block title for ON-DEVICE section inside the sheet.")
 
     p.add_argument("--offline_sheet", type=str, default=None, help="Offline sheet name (two-sheet mode).")
